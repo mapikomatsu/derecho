@@ -33,6 +33,36 @@
     }
   ],
   "cursos": [
+     {
+      "nombre": "Nivelación de Lenguaje",
+      "ciclo": 0,
+      "creditos": 0,
+      "prerrequisitos": []
+    },
+    {
+      "nombre": "Nivelación de Matemáticas",
+      "ciclo": 0,
+      "creditos": 0,
+      "prerrequisitos": []
+    },
+    {
+      "nombre": "Nivelación de Informática",
+      "ciclo": 0,
+      "creditos": 0,
+      "prerrequisitos": []
+    },
+    {
+      "nombre": "Introducción al Derecho",
+      "ciclo": 1,
+      "creditos": 5,
+      "prerrequisitos": []
+    },
+    {
+      "nombre": "Fundamentos de las Ciencias Empresariales",
+      "ciclo": 1,
+      "creditos": 4,
+      "prerrequisitos": []
+    }
     {
       "nombre": "Lenguaje I",
       "ciclo": 1,
