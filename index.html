@@ -1,151 +1,74 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Derecho Malla 2022</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #ffe9f3;
-      margin: 0;
-      padding: 20px;
-      color: #6e0b4f;
-    }
-    h1 {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 30px;
-    }
-    .ciclos {
-      display: flex;
-      overflow-x: auto;
-      gap: 20px;
-      padding: 20px;
-    }
-    .ciclo {
-      background-color: #fdd6e4;
-      border-radius: 20px;
-      padding: 20px;
-      min-width: 220px;
-      flex-shrink: 0;
-      box-shadow: 0 0 10px #f0a0c5;
-    }
-    .ciclo h2 {
-      font-size: 1.25rem;
-      text-align: center;
-      margin-bottom: 15px;
-    }
-    .curso {
-      background-color: #ffeef5;
-      border-radius: 12px;
-      padding: 10px;
-      margin-bottom: 10px;
-      font-size: 0.95rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      transition: all 0.2s;
-    }
-    .curso.activo {
-      background-color: #f47fb0;
-      color: white;
-      font-weight: bold;
-    }
-    .curso.bloqueado {
-      background-color: #fbdde7;
-      color: #aa5e8f;
-    }
-    .curso.completado {
-      text-decoration: line-through;
-      color: #803f99;
-    }
-    .creditos {
-      display: block;
-      font-size: 0.7rem;
-      color: #999;
-    }
-    .calculadora {
-      margin-top: 30px;
-      text-align: center;
-      background-color: #fbdde7;
-      padding: 15px;
-      border-radius: 12px;
-      font-size: 1rem;
-      font-weight: bold;
-      box-shadow: 0 0 8px #e9aacb;
-    }
-  </style>
-</head>
-<body>
-  <h1>Derecho Malla 2022</h1>
-  <div class="ciclos" id="ciclos"></div>
-  <div class="calculadora" id="calculadora">Has completado 0 de 228 créditos</div>
+<script>
+  const creditosTotales = 228;
+  const estadoCursos = {};
 
-  <script>
-    const creditosTotales = 228;
+  fetch("cursos_derecho_up.json")
+    .then(response => response.json())
+    .then(data => {
+      const cursos = data.cursos;
+      const cursos_clave = data.cursos_clave;
 
-    const cursos = JSON_DATA_AQUI;
+      function puedeActivarse(curso) {
+        return curso.prerrequisitos.every(pr => estadoCursos[pr]);
+      }
 
-    const estadoCursos = {};
+      function renderCiclos() {
+        const contenedor = document.getElementById("ciclos");
+        contenedor.innerHTML = "";
+        const cursosPorCiclo = {};
 
-    function puedeActivarse(curso) {
-      return curso.prerrequisitos.every(pr => estadoCursos[pr]);
-    }
-
-    function renderCiclos() {
-      const contenedor = document.getElementById("ciclos");
-      contenedor.innerHTML = "";
-      const cursosPorCiclo = {};
-      cursos.forEach(c => {
-        if (!cursosPorCiclo[c.ciclo]) cursosPorCiclo[c.ciclo] = [];
-        cursosPorCiclo[c.ciclo].push(c);
-      });
-
-      Object.keys(cursosPorCiclo).sort((a,b)=>a-b).forEach(ciclo => {
-        const div = document.createElement("div");
-        div.className = "ciclo";
-        const h2 = document.createElement("h2");
-        h2.textContent = `Ciclo ${ciclo}`;
-        div.appendChild(h2);
-
-        cursosPorCiclo[ciclo].forEach(curso => {
-          const divCurso = document.createElement("div");
-          divCurso.className = "curso";
-
-          const completado = estadoCursos[curso.nombre];
-          const clave = cursos_clave.some(c => c.nombre === curso.nombre);
-
-          if (completado) divCurso.classList.add("completado");
-          else if (clave || puedeActivarse(curso)) divCurso.classList.add("activo");
-          else divCurso.classList.add("bloqueado");
-
-          divCurso.textContent = curso.nombre;
-          const credit = document.createElement("span");
-          credit.className = "creditos";
-          credit.textContent = `${curso.creditos} créditos`;
-          divCurso.appendChild(credit);
-
-          divCurso.onclick = () => {
-            estadoCursos[curso.nombre] = !estadoCursos[curso.nombre];
-            renderCiclos();
-            actualizarCreditos();
-          };
-
-          div.appendChild(divCurso);
+        cursos.forEach(c => {
+          if (!cursosPorCiclo[c.ciclo]) cursosPorCiclo[c.ciclo] = [];
+          cursosPorCiclo[c.ciclo].push(c);
         });
 
-        contenedor.appendChild(div);
-      });
-    }
+        Object.keys(cursosPorCiclo).sort((a, b) => a - b).forEach(ciclo => {
+          const div = document.createElement("div");
+          div.className = "ciclo";
+          const h2 = document.createElement("h2");
+          h2.textContent = `Ciclo ${ciclo}`;
+          div.appendChild(h2);
 
-    function actualizarCreditos() {
-      let suma = 0;
-      cursos.forEach(c => {
-        if (estadoCursos[c.nombre]) suma += c.creditos;
-      });
-      document.getElementById("calculadora").textContent = `Has completado ${suma} de ${creditosTotales} créditos`;
-    }
+          cursosPorCiclo[ciclo].forEach(curso => {
+            const divCurso = document.createElement("div");
+            divCurso.className = "curso";
 
-    renderCiclos();
-  </script>
-</body>
-</html>
+            const completado = estadoCursos[curso.nombre];
+            const clave = cursos_clave.some(c => c.nombre === curso.nombre);
+
+            if (completado) divCurso.classList.add("completado");
+            else if (clave || puedeActivarse(curso)) divCurso.classList.add("activo");
+            else divCurso.classList.add("bloqueado");
+
+            divCurso.textContent = curso.nombre;
+
+            const credit = document.createElement("span");
+            credit.className = "creditos";
+            credit.textContent = `${curso.creditos} créditos`;
+            divCurso.appendChild(credit);
+
+            divCurso.onclick = () => {
+              estadoCursos[curso.nombre] = !estadoCursos[curso.nombre];
+              renderCiclos();
+              actualizarCreditos();
+            };
+
+            div.appendChild(divCurso);
+          });
+
+          contenedor.appendChild(div);
+        });
+      }
+
+      function actualizarCreditos() {
+        let suma = 0;
+        cursos.forEach(c => {
+          if (estadoCursos[c.nombre]) suma += c.creditos;
+        });
+        document.getElementById("calculadora").textContent =
+          `Has completado ${suma} de ${creditosTotales} créditos`;
+      }
+
+      renderCiclos();
+    });
+</script>
