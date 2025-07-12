@@ -1,362 +1,84 @@
 {
   "creditos_totales": 228,
   "cursos_clave": [
-    {
-      "nombre": "Nivelación de Lenguaje",
-      "ciclo": 0,
-      "creditos": 0,
-      "prerrequisitos": []
-    },
-    {
-      "nombre": "Nivelación de Matemáticas",
-      "ciclo": 0,
-      "creditos": 0,
-      "prerrequisitos": []
-    },
-    {
-      "nombre": "Nivelación de Informática",
-      "ciclo": 0,
-      "creditos": 0,
-      "prerrequisitos": []
-    },
-    {
-      "nombre": "Introducción al Derecho",
-      "ciclo": 1,
-      "creditos": 5,
-      "prerrequisitos": []
-    },
-    {
-      "nombre": "Fundamentos de las Ciencias Empresariales",
-      "ciclo": 1,
-      "creditos": 4,
-      "prerrequisitos": []
-    }
+    { "nombre": "Nivelación de Lenguaje", "ciclo": 0, "creditos": 0, "prerrequisitos": [] },
+    { "nombre": "Nivelación de Matemáticas", "ciclo": 0, "creditos": 0, "prerrequisitos": [] },
+    { "nombre": "Nivelación de Informática", "ciclo": 0, "creditos": 0, "prerrequisitos": [] },
+    { "nombre": "Introducción al Derecho", "ciclo": 1, "creditos": 5, "prerrequisitos": [] },
+    { "nombre": "Fundamentos de las Ciencias Empresariales", "ciclo": 1, "creditos": 4, "prerrequisitos": [] }
   ],
   "cursos": [
-     {
-      "nombre": "Nivelación de Lenguaje",
-      "ciclo": 0,
-      "creditos": 0,
-      "prerrequisitos": []
-    },
-    {
-      "nombre": "Nivelación de Matemáticas",
-      "ciclo": 0,
-      "creditos": 0,
-      "prerrequisitos": []
-    },
-    {
-      "nombre": "Nivelación de Informática",
-      "ciclo": 0,
-      "creditos": 0,
-      "prerrequisitos": []
-    },
-    {
-      "nombre": "Introducción al Derecho",
-      "ciclo": 1,
-      "creditos": 5,
-      "prerrequisitos": []
-    },
-    {
-      "nombre": "Fundamentos de las Ciencias Empresariales",
-      "ciclo": 1,
-      "creditos": 4,
-      "prerrequisitos": []
-    }
-    {
-      "nombre": "Lenguaje I",
-      "ciclo": 1,
-      "creditos": 4,
-      "prerrequisitos": ["Nivelación de Lenguaje"]
-    },
-    {
-      "nombre": "Matemáticas I",
-      "ciclo": 1,
-      "creditos": 5,
-      "prerrequisitos": ["Nivelación de Matemáticas"]
-    },
-    {
-      "nombre": "Lenguaje II",
-      "ciclo": 2,
-      "creditos": 4,
-      "prerrequisitos": ["Lenguaje I"]
-    },
-    {
-      "nombre": "Economía General I",
-      "ciclo": 2,
-      "creditos": 5,
-      "prerrequisitos": ["Nivelación de Matemáticas"]
-    },
-    {
-      "nombre": "Fundamentos de Contabilidad",
-      "ciclo": 2,
-      "creditos": 4,
-      "prerrequisitos": []
-    },
-    {
-      "nombre": "Derecho Constitucional General",
-      "ciclo": 2,
-      "creditos": 5,
-      "prerrequisitos": ["Introducción al Derecho"]
-    },
-    {
-      "nombre": "Personas del Derecho Civil",
-      "ciclo": 2,
-      "creditos": 4,
-      "prerrequisitos": ["Introducción al Derecho"]
-    },
-    {
-      "nombre": "Economía General II",
-      "ciclo": 3,
-      "creditos": 5,
-      "prerrequisitos": ["Economía General I"]
-    },
-    {
-      "nombre": "Acto Jurídico",
-      "ciclo": 3,
-      "creditos": 4,
-      "prerrequisitos": ["Introducción al Derecho", "Personas del Derecho Civil"]
-    },
-    {
-      "nombre": "Derechos Reales",
-      "ciclo": 3,
-      "creditos": 4,
-      "prerrequisitos": ["Introducción al Derecho"]
-    },
-    {
-      "nombre": "Ética",
-      "ciclo": 4,
-      "creditos": 4,
-      "prerrequisitos": []
-    },
-    {
-      "nombre": "Obligaciones",
-      "ciclo": 4,
-      "creditos": 4,
-      "prerrequisitos": ["Acto Jurídico"]
-    },
-    {
-      "nombre": "Derecho Procesal Constitucional",
-      "ciclo": 4,
-      "creditos": 4,
-      "prerrequisitos": ["Derecho Constitucional General"]
-    },
-    {
-      "nombre": "Teoría General del Proceso",
-      "ciclo": 4,
-      "creditos": 4,
-      "prerrequisitos": ["Acto Jurídico"]
-    },
-    {
-      "nombre": "Contabilidad Financiera Intermedia",
-      "ciclo": 5,
-      "creditos": 5,
-      "prerrequisitos": ["Fundamentos de Contabilidad"]
-    },
-    {
-      "nombre": "Contratos",
-      "ciclo": 5,
-      "creditos": 4,
-      "prerrequisitos": ["Obligaciones"]
-    },
-    {
-      "nombre": "Derecho Procesal Civil",
-      "ciclo": 5,
-      "creditos": 5,
-      "prerrequisitos": ["Teoría General del Proceso"]
-    }
-    ,
-    {
-      "nombre": "Sistemas Financieros",
-      "ciclo": 6,
-      "creditos": 4,
-      "prerrequisitos": ["Economía General II", "Fundamentos de Contabilidad"]
-    },
-    {
-      "nombre": "Derecho Penal",
-      "ciclo": 6,
-      "creditos": 5,
-      "prerrequisitos": ["Derecho Procesal Constitucional"]
-    },
-    {
-      "nombre": "Derecho Administrativo I",
-      "ciclo": 6,
-      "creditos": 4,
-      "prerrequisitos": ["Derecho Constitucional General"]
-    },
-    {
-      "nombre": "Responsabilidad Extracontractual",
-      "ciclo": 6,
-      "creditos": 3,
-      "prerrequisitos": ["Obligaciones"]
-    },
-    {
-      "nombre": "Contratos Especiales",
-      "ciclo": 6,
-      "creditos": 3,
-      "prerrequisitos": ["Contratos"]
-    },
-    {
-      "nombre": "Derecho Administrativo II",
-      "ciclo": 7,
-      "creditos": 4,
-      "prerrequisitos": ["Derecho Administrativo I", "Derecho Procesal Constitucional"]
-    },
-    {
-      "nombre": "Derecho Internacional Público",
-      "ciclo": 7,
-      "creditos": 4,
-      "prerrequisitos": ["Derecho Procesal Constitucional"]
-    },
-    {
-      "nombre": "Derecho Laboral I",
-      "ciclo": 7,
-      "creditos": 4,
-      "prerrequisitos": ["Derecho Procesal Constitucional"]
-    },
-    {
-      "nombre": "Instituciones de Derecho Mercantil",
-      "ciclo": 7,
-      "creditos": 4,
-      "prerrequisitos": ["Derechos Reales", "Contratos Especiales"]
-    },
-    {
-      "nombre": "Derecho Penal Económico",
-      "ciclo": 7,
-      "creditos": 2,
-      "prerrequisitos": ["Derecho Penal"]
-    },
-    {
-      "nombre": "Derecho Tributario I",
-      "ciclo": 8,
-      "creditos": 4,
-      "prerrequisitos": ["Derecho Administrativo I"]
-    },
-    {
-      "nombre": "Sociedades",
-      "ciclo": 8,
-      "creditos": 4,
-      "prerrequisitos": ["Instituciones de Derecho Mercantil"]
-    },
-    {
-      "nombre": "Derecho Procesal Penal",
-      "ciclo": 8,
-      "creditos": 4,
-      "prerrequisitos": ["Derecho Penal Económico"]
-    },
-    {
-      "nombre": "Análisis Económico del Derecho",
-      "ciclo": 8,
-      "creditos": 3,
-      "prerrequisitos": ["Derechos Reales", "Contratos", "Responsabilidad Extracontractual"]
-    },
-    {
-      "nombre": "Derecho Internacional Privado",
-      "ciclo": 8,
-      "creditos": 3,
-      "prerrequisitos": ["Derecho Internacional Público"]
-    },
-    {
-      "nombre": "Derecho de Familia y Sucesiones",
-      "ciclo": 9,
-      "creditos": 4,
-      "prerrequisitos": ["Derechos Reales", "Obligaciones"]
-    },
-    {
-      "nombre": "Economía y Estadística Aplicada al Derecho",
-      "ciclo": 9,
-      "creditos": 4,
-      "prerrequisitos": ["Matemáticas I", "Economía General II"]
-    },
-    {
-      "nombre": "Arbitraje",
-      "ciclo": 9,
-      "creditos": 4,
-      "prerrequisitos": ["Teoría General del Proceso", "Obligaciones"]
-    },
-    {
-      "nombre": "Derecho Tributario II",
-      "ciclo": 9,
-      "creditos": 4,
-      "prerrequisitos": ["Derecho Tributario I"]
-    },
-    {
-      "nombre": "Derecho Laboral II",
-      "ciclo": 9,
-      "creditos": 3,
-      "prerrequisitos": ["Derecho Laboral I"]
-    },
-    {
-      "nombre": "Destrezas Legales I",
-      "ciclo": 9,
-      "creditos": 3,
-      "prerrequisitos": []
-    },
-    {
-      "nombre": "Libre Competencia",
-      "ciclo": 10,
-      "creditos": 4,
-      "prerrequisitos": ["Derecho Administrativo II", "Economía y Estadística Aplicada al Derecho"]
-    },
-    {
-      "nombre": "Políticas Públicas",
-      "ciclo": 10,
-      "creditos": 3,
-      "prerrequisitos": ["Derecho Administrativo II"]
-    },
-    {
-      "nombre": "Destrezas Legales II",
-      "ciclo": 10,
-      "creditos": 3,
-      "prerrequisitos": ["Destrezas Legales I", "Contratos"]
-    },
-    {
-      "nombre": "Derecho Ambiental",
-      "ciclo": 10,
-      "creditos": 3,
-      "prerrequisitos": ["Derecho Administrativo I", "Responsabilidad Extracontractual"]
-    },
-    {
-      "nombre": "Innovación Legal y Tecnología",
-      "ciclo": 11,
-      "creditos": 3,
-      "prerrequisitos": []
-    },
-    {
-      "nombre": "Proyección Social",
-      "ciclo": 11,
-      "creditos": 4,
-      "prerrequisitos": []
-    },
-    {
-      "nombre": "Banca y Mercado de Valores",
-      "ciclo": 11,
-      "creditos": 4,
-      "prerrequisitos": ["Sociedades", "Sistemas Financieros"]
-    },
-    {
-      "nombre": "Responsabilidad del Abogado",
-      "ciclo": 11,
-      "creditos": 3,
-      "prerrequisitos": ["Derecho Constitucional General", "Contratos", "Sociedades"]
-    },
-    {
-      "nombre": "Instrumentos de Financiación y Garantías",
-      "ciclo": 12,
-      "creditos": 4,
-      "prerrequisitos": ["Sociedades", "Sistemas Financieros"]
-    },
-    {
-      "nombre": "Derecho del Comercio Internacional",
-      "ciclo": 12,
-      "creditos": 3,
-      "prerrequisitos": ["Derecho Internacional Público"]
-    },
-    {
-      "nombre": "Seminario de Tesis",
-      "ciclo": 12,
-      "creditos": 3,
-      "prerrequisitos": []
-    }
-  ]
-}
+    { "nombre": "Nivelación de Lenguaje", "ciclo": 0, "creditos": 0, "prerrequisitos": [] },
+    { "nombre": "Nivelación de Matemáticas", "ciclo": 0, "creditos": 0, "prerrequisitos": [] },
+    { "nombre": "Nivelación de Informática", "ciclo": 0, "creditos": 0, "prerrequisitos": [] },
+
+    { "nombre": "Introducción al Derecho", "ciclo": 1, "creditos": 5, "prerrequisitos": [] },
+    { "nombre": "Fundamentos de las Ciencias Empresariales", "ciclo": 1, "creditos": 4, "prerrequisitos": [] },
+    { "nombre": "Lenguaje I", "ciclo": 1, "creditos": 4, "prerrequisitos": ["Nivelación de Lenguaje"] },
+    { "nombre": "Matemáticas I", "ciclo": 1, "creditos": 5, "prerrequisitos": ["Nivelación de Matemáticas"] },
+
+    { "nombre": "Lenguaje II", "ciclo": 2, "creditos": 4, "prerrequisitos": ["Lenguaje I"] },
+    { "nombre": "Economía General I", "ciclo": 2, "creditos": 5, "prerrequisitos": ["Nivelación de Matemáticas"] },
+    { "nombre": "Fundamentos de Contabilidad", "ciclo": 2, "creditos": 4, "prerrequisitos": [] },
+    { "nombre": "Derecho Constitucional General", "ciclo": 2, "creditos": 5, "prerrequisitos": ["Introducción al Derecho"] },
+    { "nombre": "Personas del Derecho Civil", "ciclo": 2, "creditos": 4, "prerrequisitos": ["Introducción al Derecho"] },
+
+    { "nombre": "Economía General II", "ciclo": 3, "creditos": 5, "prerrequisitos": ["Economía General I"] },
+    { "nombre": "Cosmología", "ciclo": 3, "creditos": 4, "prerrequisitos": [] },
+    { "nombre": "Investigación Académica", "ciclo": 3, "creditos": 3, "prerrequisitos": [] },
+    { "nombre": "Acto Jurídico", "ciclo": 3, "creditos": 4, "prerrequisitos": ["Introducción al Derecho", "Personas del Derecho Civil"] },
+    { "nombre": "Derechos Reales", "ciclo": 3, "creditos": 4, "prerrequisitos": ["Introducción al Derecho"] },
+
+    { "nombre": "Ética", "ciclo": 4, "creditos": 4, "prerrequisitos": [] },
+     { "nombre": "Sociología", "ciclo": 4, "creditos": 4, "prerrequisitos": [] },
+    { "nombre": "Obligaciones", "ciclo": 4, "creditos": 4, "prerrequisitos": ["Acto Jurídico"] },
+    { "nombre": "Derecho Procesal Constitucional", "ciclo": 4, "creditos": 4, "prerrequisitos": ["Derecho Constitucional General"] },
+    { "nombre": "Teoría General del Proceso", "ciclo": 4, "creditos": 4, "prerrequisitos": ["Acto Jurídico"] },
+
+    { "nombre": "Contabilidad Financiera Intermedia", "ciclo": 5, "creditos": 5, "prerrequisitos": ["Fundamentos de Contabilidad"] },
+    { "nombre": "Ciencia Política", "ciclo": 5, "creditos": 4, "prerrequisitos": [] }
+    { "nombre": "Historia Económica y Empresarial", "ciclo": 5, "creditos": 4, "prerrequisitos": [] }
+    { "nombre": "Contratos", "ciclo": 5, "creditos": 4, "prerrequisitos": ["Obligaciones"] },
+    { "nombre": "Derecho Procesal Civil", "ciclo": 5, "creditos": 5, "prerrequisitos": ["Teoría General del Proceso"] },
+
+    { "nombre": "Sistemas Financieros", "ciclo": 6, "creditos": 4, "prerrequisitos": ["Economía General II", "Fundamentos de Contabilidad"] },
+    { "nombre": "Emprendimiento e Innovación", "ciclo": 6, "creditos": 4, "prerrequisitos": [] }
+    { "nombre": "Derecho Penal", "ciclo": 6, "creditos": 5, "prerrequisitos": ["Derecho Procesal Constitucional"] },
+    { "nombre": "Derecho Administrativo I", "ciclo": 6, "creditos": 4, "prerrequisitos": ["Derecho Constitucional General"] },
+    { "nombre": "Responsabilidad Extracontractual", "ciclo": 6, "creditos": 3, "prerrequisitos": ["Obligaciones"] },
+    { "nombre": "Contratos Especiales", "ciclo": 6, "creditos": 3, "prerrequisitos": ["Contratos"] }
+
+    { "nombre": "Filosofía", "ciclo": 7, "creditos": 4, "prerrequisitos": [] }
+    { "nombre": "Pensamiento Social Contemporáneo", "ciclo": 7, "creditos": 4, "prerrequisitos": [] }
+    { "nombre": "Derecho Administrativo II", "ciclo": 7, "creditos": 4, "prerrequisitos": ["Derecho Administrativo I", "Derecho Procesal Constitucional"] },
+    { "nombre": "Derecho Internacional Público", "ciclo": 7, "creditos": 4, "prerrequisitos": ["Derecho Procesal Constitucional"] },
+    { "nombre": "Derecho Laboral I", "ciclo": 7, "creditos": 4, "prerrequisitos": ["Derecho Procesal Constitucional"] },
+    { "nombre": "Instituciones de Derecho Mercantil", "ciclo": 7, "creditos": 4, "prerrequisitos": ["Derechos Reales", "Contratos Especiales"] },
+    { "nombre": "Derecho Penal Económico", "ciclo": 7, "creditos": 2, "prerrequisitos": ["Derecho Penal"] },
+
+    { "nombre": "Derecho Tributario I", "ciclo": 8, "creditos": 4, "prerrequisitos": ["Derecho Administrativo I"] },
+    { "nombre": "Sociedades", "ciclo": 8, "creditos": 4, "prerrequisitos": ["Instituciones de Derecho Mercantil"] },
+    { "nombre": "Derecho Procesal Penal", "ciclo": 8, "creditos": 4, "prerrequisitos": ["Derecho Penal Económico"] },
+    { "nombre": "Análisis Económico del Derecho", "ciclo": 8, "creditos": 3, "prerrequisitos": ["Derechos Reales", "Contratos", "Responsabilidad Extracontractual"] },
+    { "nombre": "Derecho Internacional Privado", "ciclo": 8, "creditos": 3, "prerrequisitos": ["Derecho Internacional Público"] },
+
+    { "nombre": "Derecho de Familia y Sucesiones", "ciclo": 9, "creditos": 4, "prerrequisitos": ["Derechos Reales", "Obligaciones"] },
+    { "nombre": "Economía y Estadística Aplicada al Derecho", "ciclo": 9, "creditos": 4, "prerrequisitos": ["Matemáticas I", "Economía General II"] },
+    { "nombre": "Arbitraje", "ciclo": 9, "creditos": 4, "prerrequisitos": ["Teoría General del Proceso", "Obligaciones"] },
+    { "nombre": "Derecho Tributario II", "ciclo": 9, "creditos": 4, "prerrequisitos": ["Derecho Tributario I"] },
+    { "nombre": "Derecho Laboral II", "ciclo": 9, "creditos": 3, "prerrequisitos": ["Derecho Laboral I"] },
+    { "nombre": "Destrezas Legales I", "ciclo": 9, "creditos": 3, "prerrequisitos": [] },
+
+    { "nombre": "Libre Competencia", "ciclo": 10, "creditos": 4, "prerrequisitos": ["Derecho Administrativo II", "Economía y Estadística Aplicada al Derecho"] },
+    { "nombre": "Políticas Públicas", "ciclo": 10, "creditos": 3, "prerrequisitos": ["Derecho Administrativo II"] },
+    { "nombre": "Destrezas Legales II", "ciclo": 10, "creditos": 3, "prerrequisitos": ["Destrezas Legales I", "Contratos"] },
+    { "nombre": "Derecho Ambiental", "ciclo": 10, "creditos": 3, "prerrequisitos": ["Derecho Administrativo I", "Responsabilidad Extracontractual"] },
+
+    { "nombre": "Innovación Legal y Tecnología", "ciclo": 11, "creditos": 3, "prerrequisitos": ["Derecho Constitucional Especial", "Contratos"] },
+    { "nombre": "Proyección Social", "ciclo": 11, "creditos": 4, "prerrequisitos": [] },
+    { "nombre": "Banca y Mercado de Valores", "ciclo": 11, "creditos": 4, "prerrequisitos": ["Sociedades", "Sistemas Financieros"] },
+    { "nombre": "Responsabilidad del Abogado", "ciclo": 11, "creditos": 3, "prerrequisitos": ["Derecho Constitucional General", "Contratos", "Sociedades"] },
+
+    { "nombre": "Instrumentos de Financiación y Garantías", "ciclo": 12, "creditos": 4, "prerrequisitos": ["Sociedades", "Sistemas Financieros"] },
+    { "nombre": "Derecho del Comercio Internacional", "ciclo": 12, "creditos": 3, "prerrequisitos": ["Derecho Internacional Público"] },
+    { "nombre": "Seminario de Tesis", "ciclo": 12, "creditos": 3, "prerrequisitos": [] },
