@@ -1,0 +1,115 @@
+body {
+  background-color: #FFEFF7;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+}
+
+h1 {
+  text-align: center;
+  color: #C43D88;
+  font-size: 2.5rem;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  padding: 40px;
+  overflow-x: auto;
+}
+
+.ciclo-column {
+  background-color: #FFD9EC;
+  border-radius: 16px;
+  padding: 16px;
+  min-width: 220px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.ciclo-column h2 {
+  text-align: center;
+  color: #C43D88;
+  font-size: 1.2rem;
+  margin-bottom: 14px;
+  font-weight: bold;
+}
+
+.curso {
+  padding: 10px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  border: 2px dashed #DA6794;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+/* Cursos bloqueados */
+.curso.bloqueado {
+  background-color: #FFE4EC;
+  border-color: #DA6794;
+  color: #B9B1B3;
+  cursor: not-allowed;
+}
+
+/* Cursos activos */
+.curso.activo {
+  background-color: #EEA4BD;
+  border-color: #DA6794;
+  color: #B24D7E;
+  cursor: pointer;
+}
+
+/* Cursos completados */
+.curso.completado {
+  background-color: #D1BEE7;
+  border-color: #8954A9;
+  color: #572394;
+  text-decoration: line-through;
+}
+
+/* Créditos en letra chiquita aesthetic */
+.creditos {
+  font-size: 0.7rem;
+  display: block;
+  margin-top: 4px;
+  color: #555;
+}
+
+/* Calculadora de créditos */
+#creditos-completados {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #B24D7E;
+  background-color: #FFDAEC;
+  padding: 12px 20px;
+  border-radius: 16px;
+  border: 2px solid #DA6794;
+  width: fit-content;
+  margin: 20px auto 40px auto;
+  font-weight: bold;
+  box-shadow: 0px 3px 6px rgba(212, 96, 154, 0.2);
+}
+
+/* Transiciones suaves */
+.curso:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive ajustes opcionales */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+}
