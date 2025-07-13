@@ -5,7 +5,7 @@
     { "nombre": "Nivelación de Matemáticas", "ciclo": 0, "creditos": 0, "prerrequisitos": [] },
     { "nombre": "Nivelación de Informática", "ciclo": 0, "creditos": 0, "prerrequisitos": [] },
     { "nombre": "Introducción al Derecho", "ciclo": 1, "creditos": 5, "prerrequisitos": [] },
-    { "nombre": "Fundamentos de las Ciencias Empresariales", "ciclo": 1, "creditos": 4, "prerrequisitos": [] },
+    { "nombre": "Fundamentos de las Ciencias Empresariales", "ciclo": 1, "creditos": 4, "prerrequisitos": [] }
   ],
   "cursos": [
     { "nombre": "Nivelación de Lenguaje", "ciclo": 0, "creditos": 0, "prerrequisitos": [] },
@@ -48,7 +48,7 @@
     { "nombre": "Responsabilidad Extracontractual", "ciclo": 6, "creditos": 3, "prerrequisitos": ["Obligaciones"] },
     { "nombre": "Contratos Especiales", "ciclo": 6, "creditos": 3, "prerrequisitos": ["Contratos"] },
 
-    { "nombre": "Filosofía", "ciclo": 7, "creditos": 4, "prerrequisitos": [] }
+    { "nombre": "Filosofía", "ciclo": 7, "creditos": 4, "prerrequisitos": [] },
     { "nombre": "Pensamiento Social Contemporáneo", "ciclo": 7, "creditos": 4, "prerrequisitos": [] },
     { "nombre": "Derecho Administrativo II", "ciclo": 7, "creditos": 4, "prerrequisitos": ["Derecho Administrativo I", "Derecho Procesal Constitucional"] },
     { "nombre": "Derecho Internacional Público", "ciclo": 7, "creditos": 4, "prerrequisitos": ["Derecho Procesal Constitucional"] },
@@ -74,7 +74,7 @@
     { "nombre": "Destrezas Legales II", "ciclo": 10, "creditos": 3, "prerrequisitos": ["Destrezas Legales I", "Contratos"] },
     { "nombre": "Derecho Ambiental", "ciclo": 10, "creditos": 3, "prerrequisitos": ["Derecho Administrativo I", "Responsabilidad Extracontractual"] },
 
-    { "nombre": "Innovación Legal y Tecnología", "ciclo": 11, "creditos": 3, "prerrequisitos": ["Derecho Constitucional Especial", "Contratos"] },
+    { "nombre": "Innovación Legal y Tecnología", "ciclo": 11, "creditos": 3, "prerrequisitos": ["Derecho Procesal Constitucional", "Contratos"] },
     { "nombre": "Proyección Social", "ciclo": 11, "creditos": 4, "prerrequisitos": [] },
     { "nombre": "Banca y Mercado de Valores", "ciclo": 11, "creditos": 4, "prerrequisitos": ["Sociedades", "Sistemas Financieros"] },
     { "nombre": "Responsabilidad del Abogado", "ciclo": 11, "creditos": 3, "prerrequisitos": ["Derecho Constitucional General", "Contratos", "Sociedades"] },
