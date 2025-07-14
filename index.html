@@ -13,7 +13,7 @@
   <div id="creditos-wrapper">
     <div id="creditos-completados">Has completado 0 de 228 créditos</div>
     <div id="porcentaje-completado">0%</div>
-    <button id="resetear">Borrar progreso</button>
+    <button id="resetear" title="Borra todo tu progreso">Borrar progreso</button>
   </div>
 
   <script>
@@ -62,7 +62,11 @@
                 divCurso.classList.add("activo");
               } else {
                 divCurso.classList.add("bloqueado");
-                divCurso.setAttribute("data-tooltip", `Requiere: ${curso.prerrequisitos.join(", ")}`);
+
+                // Tooltip personalizado
+                if (curso.prerrequisitos.length > 0) {
+                  divCurso.setAttribute("data-tooltip", `Requiere: ${curso.prerrequisitos.join(", ")}`);
+                }
               }
 
               divCurso.textContent = curso.nombre;
@@ -85,6 +89,26 @@
             });
 
             contenedor.appendChild(div);
+          });
+
+          // Activar tooltips
+          document.querySelectorAll('.curso.bloqueado[data-tooltip]').forEach(el => {
+            el.addEventListener('mouseenter', function () {
+              const tooltip = document.createElement('div');
+              tooltip.className = 'tooltip';
+              tooltip.innerHTML = `<strong>${el.getAttribute('data-tooltip')}</strong>`;
+              document.body.appendChild(tooltip);
+              const rect = el.getBoundingClientRect();
+              tooltip.style.top = `${rect.bottom + window.scrollY + 5}px`;
+              tooltip.style.left = `${rect.left + window.scrollX}px`;
+              el._tooltip = tooltip;
+            });
+            el.addEventListener('mouseleave', function () {
+              if (el._tooltip) {
+                el._tooltip.remove();
+                el._tooltip = null;
+              }
+            });
           });
         }
 
