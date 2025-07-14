@@ -4,7 +4,6 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: auto;
-  font-size: 0.95rem; /* reducido ligeramente */
 }
 
 h1 {
@@ -18,16 +17,16 @@ h1 {
 .container {
   display: flex;
   flex-direction: row;
-  gap: 14px;
-  padding: 30px;
+  gap: 12px;
+  padding: 20px;
   overflow-x: auto;
 }
 
 .ciclo-column {
   background-color: #FFD9EC;
   border-radius: 16px;
-  padding: 14px;
-  min-width: 210px;
+  padding: 12px;
+  min-width: 190px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.08);
   flex-shrink: 0;
 }
@@ -41,15 +40,38 @@ h1 {
 }
 
 .curso {
-  padding: 9px;
-  border-radius: 12px;
-  margin-bottom: 9px;
+  padding: 8px;
+  border-radius: 10px;
+  margin-bottom: 8px;
   border: 2px dashed #DA6794;
   text-align: center;
   font-weight: bold;
-  font-size: 0.92rem;
-  transition: all 0.3s ease;
+  font-size: 0.9rem;
   position: relative;
+  transition: all 0.3s ease;
+}
+
+.curso.bloqueado::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -1.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 10;
+}
+
+.curso.bloqueado:hover::after {
+  opacity: 1;
 }
 
 /* Cursos bloqueados */
@@ -76,37 +98,33 @@ h1 {
   text-decoration: line-through;
 }
 
-/* Créditos en letra chiquita aesthetic */
 .creditos {
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   display: block;
   margin-top: 3px;
   color: #555;
 }
 
-/* WRAPPER de créditos + porcentaje */
 #creditos-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #FFDAEC;
   border: 2px solid #DA6794;
-  border-radius: 24px;
-  padding: 10px 24px;
+  border-radius: 28px;
+  padding: 10px 20px;
   width: fit-content;
-  margin: 15px auto 10px auto;
+  margin: 20px auto 30px auto;
   box-shadow: 0px 3px 6px rgba(212, 96, 154, 0.2);
-  gap: 16px;
+  gap: 14px;
 }
 
-/* Texto de créditos */
 #creditos-completados {
   font-size: 1rem;
   color: #B24D7E;
   font-weight: bold;
 }
 
-/* Porcentaje de progreso */
 #porcentaje-completado {
   font-size: 0.95rem;
   background-color: white;
@@ -118,74 +136,37 @@ h1 {
   box-shadow: 0px 2px 4px rgba(212, 96, 154, 0.15);
 }
 
-/* Botón de borrar progreso */
-#borrar-wrapper {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-#btn-borrar {
-  background-color: #FFD9EC;
+#resetear {
+  background-color: #FFD1E8;
   color: #B24D7E;
-  font-weight: bold;
   border: 2px solid #DA6794;
-  border-radius: 20px;
-  padding: 8px 18px;
+  border-radius: 16px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 0.9rem;
-  box-shadow: 0px 2px 4px rgba(212, 96, 154, 0.15);
 }
 
-#btn-borrar:hover {
-  background-color: #FFCBE3;
+#resetear:hover {
+  background-color: #FBB6D0;
+  transform: scale(1.03);
 }
 
-/* Transiciones suaves */
 .curso:hover {
   transform: scale(1.02);
 }
 
-/* Tooltip (sin flechita del navegador) */
-.curso[title] {
-  position: relative;
-}
-
-.curso[title]:hover::after {
-  content: attr(title);
-  position: absolute;
-  bottom: 120%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #572394;
-  color: white;
-  padding: 6px 10px;
-  border-radius: 8px;
-  font-size: 0.8rem;
-  white-space: nowrap;
-  font-weight: bold;
-  z-index: 10;
-  pointer-events: none;
-}
-
-/* Ocultar la flechita del sistema (solo visual) */
-.curso[title]:hover {
-  cursor: help;
-}
-
-/* Responsive ajustes */
 @media (max-width: 600px) {
   h1 {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
-
   .container {
     flex-direction: column;
-    padding: 20px;
+    padding: 16px;
   }
-
   #creditos-wrapper {
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
   }
 }
