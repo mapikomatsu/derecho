@@ -10,15 +10,10 @@
   <h1>Derecho Malla 2022</h1>
   <div id="ciclos" class="container"></div>
 
-  <!-- Créditos + Porcentaje -->
   <div id="creditos-wrapper">
     <div id="creditos-completados">Has completado 0 de 228 créditos</div>
     <div id="porcentaje-completado">0%</div>
-  </div>
-
-  <!-- Botón de borrar progreso -->
-  <div id="borrar-wrapper">
-    <button id="btn-borrar">Borrar progreso</button>
+    <button id="resetear">Borrar progreso</button>
   </div>
 
   <script>
@@ -59,14 +54,15 @@
 
               const completado = estadoCursos[curso.nombre];
               const clave = cursos_clave.some(c => c.nombre === curso.nombre);
+              const activable = puedeActivarse(curso);
 
-              if (completado) divCurso.classList.add("completado");
-              else if (clave || puedeActivarse(curso)) divCurso.classList.add("activo");
-              else {
+              if (completado) {
+                divCurso.classList.add("completado");
+              } else if (clave || activable) {
+                divCurso.classList.add("activo");
+              } else {
                 divCurso.classList.add("bloqueado");
-                if (curso.prerrequisitos.length > 0) {
-                  divCurso.title = "Requiere: " + curso.prerrequisitos.join(", ");
-                }
+                divCurso.setAttribute("data-tooltip", `Requiere: ${curso.prerrequisitos.join(", ")}`);
               }
 
               divCurso.textContent = curso.nombre;
@@ -104,13 +100,11 @@
           document.getElementById("porcentaje-completado").textContent = `${porcentaje}%`;
         }
 
-        document.getElementById("btn-borrar").onclick = () => {
-          if (confirm("¿Estás segura que quieres borrar tu progreso?")) {
-            Object.keys(estadoCursos).forEach(k => estadoCursos[k] = false);
-            localStorage.setItem("estadoCursos", JSON.stringify(estadoCursos));
-            renderCiclos();
-            actualizarCreditos();
-          }
+        document.getElementById("resetear").onclick = () => {
+          localStorage.removeItem("estadoCursos");
+          for (let key in estadoCursos) delete estadoCursos[key];
+          renderCiclos();
+          actualizarCreditos();
         };
 
         renderCiclos();
