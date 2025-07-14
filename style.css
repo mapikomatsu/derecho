@@ -51,25 +51,6 @@ h1 {
   transition: all 0.3s ease;
 }
 
-/* Tooltip estilo girly */
-.curso.bloqueado[data-tooltip]:hover::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: -1.6rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #FFC4DD;
-  color: #572943;
-  padding: 4px 10px;
-  border-radius: 10px;
-  font-size: 0.7rem;
-  font-weight: bold;
-  white-space: nowrap;
-  z-index: 10;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
-  opacity: 1;
-}
-
 /* Cursos bloqueados */
 .curso.bloqueado {
   background-color: #FFE4EC;
@@ -100,6 +81,21 @@ h1 {
   display: block;
   margin-top: 3px;
   color: #555;
+}
+
+/* Tooltip flotante personalizado */
+.tooltip-flotante {
+  position: absolute;
+  background-color: #FFC4DD;
+  color: #572943;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+  z-index: 9999;
+  pointer-events: none;
 }
 
 /* Wrapper: créditos + porcentaje + botón */
