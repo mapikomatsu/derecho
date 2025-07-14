@@ -10,10 +10,15 @@
   <h1>Derecho Malla 2022</h1>
   <div id="ciclos" class="container"></div>
 
+  <!-- Créditos + Porcentaje -->
   <div id="creditos-wrapper">
     <div id="creditos-completados">Has completado 0 de 228 créditos</div>
     <div id="porcentaje-completado">0%</div>
-    <button id="resetear-progreso">Resetear progreso</button>
+  </div>
+
+  <!-- Botón de borrar progreso -->
+  <div id="borrar-wrapper">
+    <button id="btn-borrar">Borrar progreso</button>
   </div>
 
   <script>
@@ -59,7 +64,9 @@
               else if (clave || puedeActivarse(curso)) divCurso.classList.add("activo");
               else {
                 divCurso.classList.add("bloqueado");
-                divCurso.title = `Requiere: ${curso.prerrequisitos.join(", ")}`;
+                if (curso.prerrequisitos.length > 0) {
+                  divCurso.title = "Requiere: " + curso.prerrequisitos.join(", ");
+                }
               }
 
               divCurso.textContent = curso.nombre;
@@ -92,17 +99,17 @@
           });
 
           const porcentaje = ((suma / creditosTotales) * 100).toFixed(0);
-
           document.getElementById("creditos-completados").textContent =
             `Has completado ${suma} de ${creditosTotales} créditos`;
-
           document.getElementById("porcentaje-completado").textContent = `${porcentaje}%`;
         }
 
-        document.getElementById("resetear-progreso").onclick = () => {
-          if (confirm("¿Estás seguro de que deseas reiniciar tu progreso?")) {
-            localStorage.removeItem("estadoCursos");
-            location.reload();
+        document.getElementById("btn-borrar").onclick = () => {
+          if (confirm("¿Estás segura que quieres borrar tu progreso?")) {
+            Object.keys(estadoCursos).forEach(k => estadoCursos[k] = false);
+            localStorage.setItem("estadoCursos", JSON.stringify(estadoCursos));
+            renderCiclos();
+            actualizarCreditos();
           }
         };
 
