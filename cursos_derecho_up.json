@@ -67,7 +67,7 @@
     { "nombre": "Arbitraje", "ciclo": 9, "creditos": 4, "prerrequisitos": ["Teoría General del Proceso", "Obligaciones"] },
     { "nombre": "Derecho Tributario II", "ciclo": 9, "creditos": 4, "prerrequisitos": ["Derecho Tributario I"] },
     { "nombre": "Derecho Laboral II", "ciclo": 9, "creditos": 3, "prerrequisitos": ["Derecho Laboral I"] },
-    { "nombre": "Destrezas Legales I", "ciclo": 9, "creditos": 3, "prerrequisitos": [], "min_creditos": 120 }
+    { "nombre": "Destrezas Legales I", "ciclo": 9, "creditos": 3, "prerrequisitos": [], "min_creditos": 120 },
 
     { "nombre": "Libre Competencia", "ciclo": 10, "creditos": 4, "prerrequisitos": ["Derecho Administrativo II", "Economía y Estadística Aplicada al Derecho"] },
     { "nombre": "Políticas Públicas", "ciclo": 10, "creditos": 3, "prerrequisitos": ["Derecho Administrativo II"] },
@@ -75,7 +75,7 @@
     { "nombre": "Derecho Ambiental", "ciclo": 10, "creditos": 3, "prerrequisitos": ["Derecho Administrativo I", "Responsabilidad Extracontractual"] },
 
     { "nombre": "Innovación Legal y Tecnología", "ciclo": 11, "creditos": 3, "prerrequisitos": ["Derecho Procesal Constitucional", "Contratos"] },
-    { "nombre": "Proyección Social", "ciclo": 11, "creditos": 4, "prerrequisitos": [], "min_creditos": 160 }
+    { "nombre": "Proyección Social", "ciclo": 11, "creditos": 4, "prerrequisitos": [], "min_creditos": 160 },
     { "nombre": "Banca y Mercado de Valores", "ciclo": 11, "creditos": 4, "prerrequisitos": ["Sociedades", "Sistemas Financieros"] },
     { "nombre": "Responsabilidad del Abogado", "ciclo": 11, "creditos": 3, "prerrequisitos": ["Derecho Constitucional General", "Contratos", "Sociedades"] },
 
