@@ -63,7 +63,6 @@
               } else {
                 divCurso.classList.add("bloqueado");
 
-                // Tooltip personalizado
                 if (curso.prerrequisitos.length > 0) {
                   divCurso.setAttribute("data-tooltip", `Requiere: ${curso.prerrequisitos.join(", ")}`);
                 }
@@ -91,16 +90,18 @@
             contenedor.appendChild(div);
           });
 
-          // Activar tooltips
+          // Activar tooltips flotantes por encima
           document.querySelectorAll('.curso.bloqueado[data-tooltip]').forEach(el => {
             el.addEventListener('mouseenter', function () {
               const tooltip = document.createElement('div');
-              tooltip.className = 'tooltip';
+              tooltip.className = 'tooltip-flotante';
               tooltip.innerHTML = `<strong>${el.getAttribute('data-tooltip')}</strong>`;
               document.body.appendChild(tooltip);
               const rect = el.getBoundingClientRect();
-              tooltip.style.top = `${rect.bottom + window.scrollY + 5}px`;
+              tooltip.style.position = 'absolute';
+              tooltip.style.top = `${rect.bottom + window.scrollY + 8}px`;
               tooltip.style.left = `${rect.left + window.scrollX}px`;
+              tooltip.style.zIndex = 9999;
               el._tooltip = tooltip;
             });
             el.addEventListener('mouseleave', function () {
