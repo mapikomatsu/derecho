@@ -26,13 +26,21 @@
         const cursos = data.cursos;
         const cursos_clave = data.cursos_clave;
 
-        function puedeActivarse(curso) {
-          return curso.prerrequisitos.every(pr => estadoCursos[pr]);
+        function puedeActivarse(curso, creditosActuales) {
+          const cumplePrerrequisitos = curso.prerrequisitos.every(pr => estadoCursos[pr]);
+          const cumpleMinCreditos = !curso.min_creditos || creditosActuales >= curso.min_creditos;
+          return cumplePrerrequisitos && cumpleMinCreditos;
+        }
+
+        function contarCreditosCompletados() {
+          return cursos.reduce((suma, c) => estadoCursos[c.nombre] ? suma + c.creditos : suma, 0);
         }
 
         function renderCiclos() {
           const contenedor = document.getElementById("ciclos");
           contenedor.innerHTML = "";
+
+          const creditosActuales = contarCreditosCompletados();
 
           const cursosPorCiclo = {};
           cursos.forEach(c => {
@@ -51,10 +59,9 @@
             cursosPorCiclo[ciclo].forEach(curso => {
               const divCurso = document.createElement("div");
               divCurso.className = "curso";
-
               const completado = estadoCursos[curso.nombre];
               const clave = cursos_clave.some(c => c.nombre === curso.nombre);
-              const activable = puedeActivarse(curso);
+              const activable = puedeActivarse(curso, creditosActuales);
 
               if (completado) {
                 divCurso.classList.add("completado");
@@ -62,10 +69,10 @@
                 divCurso.classList.add("activo");
               } else {
                 divCurso.classList.add("bloqueado");
-
-                if (curso.prerrequisitos.length > 0) {
-                  divCurso.setAttribute("data-tooltip", `Requiere: ${curso.prerrequisitos.join(", ")}`);
-                }
+                const reqCursos = curso.prerrequisitos.length ? `Cursos: ${curso.prerrequisitos.join(", ")}` : "";
+                const reqCred = curso.min_creditos ? `Créditos: ${curso.min_creditos}` : "";
+                const totalReq = [reqCursos, reqCred].filter(Boolean).join(" | ");
+                divCurso.setAttribute("data-tooltip", `Requiere: ${totalReq}`);
               }
 
               divCurso.textContent = curso.nombre;
@@ -90,7 +97,7 @@
             contenedor.appendChild(div);
           });
 
-          // Activar tooltips flotantes por encima
+          // Tooltips flotantes lindos
           document.querySelectorAll('.curso.bloqueado[data-tooltip]').forEach(el => {
             el.addEventListener('mouseenter', function () {
               const tooltip = document.createElement('div');
@@ -98,7 +105,6 @@
               tooltip.innerHTML = `<strong>${el.getAttribute('data-tooltip')}</strong>`;
               document.body.appendChild(tooltip);
               const rect = el.getBoundingClientRect();
-              tooltip.style.position = 'absolute';
               tooltip.style.top = `${rect.bottom + window.scrollY + 8}px`;
               tooltip.style.left = `${rect.left + window.scrollX}px`;
               tooltip.style.zIndex = 9999;
@@ -114,11 +120,7 @@
         }
 
         function actualizarCreditos() {
-          let suma = 0;
-          cursos.forEach(c => {
-            if (estadoCursos[c.nombre]) suma += c.creditos;
-          });
-
+          const suma = contarCreditosCompletados();
           const porcentaje = ((suma / creditosTotales) * 100).toFixed(0);
           document.getElementById("creditos-completados").textContent =
             `Has completado ${suma} de ${creditosTotales} créditos`;
