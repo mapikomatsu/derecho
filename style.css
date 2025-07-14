@@ -82,19 +82,38 @@ h1 {
   color: #555;
 }
 
-/* Calculadora de créditos */
-#creditos-completados {
-  text-align: center;
-  font-size: 1.1rem;
-  color: #B24D7E;
+/* WRAPPER de créditos + porcentaje */
+#creditos-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #FFDAEC;
-  padding: 12px 20px;
-  border-radius: 16px;
   border: 2px solid #DA6794;
+  border-radius: 24px;
+  padding: 10px 24px;
   width: fit-content;
   margin: 20px auto 40px auto;
-  font-weight: bold;
   box-shadow: 0px 3px 6px rgba(212, 96, 154, 0.2);
+  gap: 16px;
+}
+
+/* Texto de créditos */
+#creditos-completados {
+  font-size: 1.1rem;
+  color: #B24D7E;
+  font-weight: bold;
+}
+
+/* Porcentaje de progreso */
+#porcentaje-completado {
+  font-size: 1rem;
+  background-color: white;
+  color: #B24D7E;
+  padding: 6px 12px;
+  border-radius: 16px;
+  border: 2px solid #DA6794;
+  font-weight: bold;
+  box-shadow: 0px 2px 4px rgba(212, 96, 154, 0.15);
 }
 
 /* Transiciones suaves */
@@ -111,5 +130,10 @@ h1 {
   .container {
     flex-direction: column;
     padding: 20px;
+  }
+
+  #creditos-wrapper {
+    flex-direction: column;
+    gap: 6px;
   }
 }
