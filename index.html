@@ -9,11 +9,15 @@
 <body>
   <h1>Derecho Malla 2022</h1>
   <div id="ciclos" class="container"></div>
-  <div id="creditos-completados">Has completado 0 de 228 créditos</div>
+
+  <div id="creditos-wrapper">
+    <div id="creditos-completados">Has completado 0 de 228 créditos</div>
+    <div id="porcentaje-completado">0%</div>
+  </div>
 
   <script>
     const creditosTotales = 228;
-    const estadoCursos = {};
+    const estadoCursos = JSON.parse(localStorage.getItem("estadoCursos")) || {};
 
     fetch("cursos_derecho_up.json")
       .then(res => res.json())
@@ -64,6 +68,7 @@
               divCurso.onclick = () => {
                 if (!divCurso.classList.contains("bloqueado")) {
                   estadoCursos[curso.nombre] = !estadoCursos[curso.nombre];
+                  localStorage.setItem("estadoCursos", JSON.stringify(estadoCursos));
                   renderCiclos();
                   actualizarCreditos();
                 }
@@ -81,11 +86,17 @@
           cursos.forEach(c => {
             if (estadoCursos[c.nombre]) suma += c.creditos;
           });
+
+          const porcentaje = ((suma / creditosTotales) * 100).toFixed(0);
+
           document.getElementById("creditos-completados").textContent =
             `Has completado ${suma} de ${creditosTotales} créditos`;
+
+          document.getElementById("porcentaje-completado").textContent = `${porcentaje}%`;
         }
 
         renderCiclos();
+        actualizarCreditos();
       });
   </script>
 </body>
